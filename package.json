@@ -14,10 +14,11 @@
     "@emotion/styled": "^11.6.0",
     "framer-motion": "^5.5.6",
     "gray-matter": "^4.0.3",
-    "marked": "^4.0.9",
+    "markdown-to-jsx": "^7.1.5",
     "next": "12.0.7",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-markdown": "^7.1.2"
   },
   "devDependencies": {
     "eslint": "8.6.0",

@@ -14,3 +14,11 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.md code {
+  white-space: pre-wrap;
+}
+
+.md pre {
+  white-space: pre-wrap;
+}

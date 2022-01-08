@@ -1,8 +1,18 @@
-import { Heading } from '@chakra-ui/react';
+import {
+  Heading,
+  Box,
+  Text,
+  UnorderedList,
+  ListItem,
+  Code,
+  OrderedList,
+} from '@chakra-ui/react';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { marked } from 'marked';
+// import { marked } from 'marked';
+import ReactMarkdown from 'react-markdown';
+// import Markdown from 'markdown-to-jsx';
 
 const PostPage = ({
   frontmatter: { title, category, date, cover_image, author, author_image },
@@ -10,10 +20,31 @@ const PostPage = ({
   slug,
 }) => {
   return (
-    <div>
+    <Box>
       <Heading>{title}</Heading>
-      <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
-    </div>
+      <Box className="md">
+        <ReactMarkdown
+          components={{
+            h1: ({ node, ...props }) => <Heading {...props} />,
+            p: ({ node, ...props }) => <Text {...props} />,
+            ul: ({ node, ordered = 'false', ...props }) => (
+              <UnorderedList {...props} />
+            ),
+            li: ({ node, ordered = 'false', ...props }) => (
+              <ListItem {...props} />
+            ),
+            ol: ({ node, ordered = 'true', ...props }) => (
+              <OrderedList {...props} />
+            ),
+            code: ({ node, ...props }) => (
+              <Code wordBreak={'break-word'} {...props} />
+            ),
+          }}
+        >
+          {content}
+        </ReactMarkdown>
+      </Box>
+    </Box>
   );
 };
 
