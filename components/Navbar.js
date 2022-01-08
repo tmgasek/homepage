@@ -36,13 +36,22 @@ const Navbar = () => {
         <Flex align={'center'} justify={'space-between'}>
           <Box>
             <NextLink href="/">
-              <Heading as={'h1'} size={'lg'} letterSpacing={'tighter'} pr={8}>
+              <Heading
+                as={'h1'}
+                size={'lg'}
+                letterSpacing={'tighter'}
+                pr={8}
+                cursor={'pointer'}
+              >
                 {'{tmg}'}
               </Heading>
             </NextLink>
           </Box>
 
           <Box>
+            <LinkItem href="/" path={router.path}>
+              About
+            </LinkItem>
             <LinkItem href="/posts" path={router.path}>
               Posts
             </LinkItem>
