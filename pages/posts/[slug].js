@@ -10,9 +10,7 @@ import {
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-// import { marked } from 'marked';
 import ReactMarkdown from 'react-markdown';
-// import Markdown from 'markdown-to-jsx';
 
 const PostPage = ({
   frontmatter: { title, category, date, cover_image, author, author_image },
