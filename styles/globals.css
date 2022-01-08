@@ -15,10 +15,16 @@ a {
   box-sizing: border-box;
 }
 
-.md code {
+/* .md code {
   white-space: pre-wrap;
+  overflow: hidden;
 }
 
 .md pre {
   white-space: pre-wrap;
+  overflow: hidden;
 }
+
+.md div {
+  overflow: hidden;
+} */

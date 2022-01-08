@@ -24,3 +24,30 @@ Embedded gist content:
 console.log('It works!');
 <script src="https://gist.github.com/aaronhanson/5a2a234c2383919629de.js"></script>;
 ```
+
+```js
+import { Box, Heading } from '@chakra-ui/react';
+import { getPosts } from '../../lib';
+import PostCard from '../../components/PostCard';
+
+const Posts = ({ posts }) => {
+  return (
+    <Box>
+      <Heading>Posts</Heading>
+      <Box>
+        {posts.map((post, index) => (
+          <PostCard key={index} post={post} />
+        ))}
+      </Box>
+    </Box>
+  );
+};
+
+export default Posts;
+
+export async function getStaticProps() {
+  return {
+    props: { posts: getPosts() },
+  };
+}
+```
