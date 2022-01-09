@@ -1,11 +1,12 @@
 import { Box, Heading } from '@chakra-ui/react';
 import { getPosts } from '../../lib';
-import PostCard from '../../components/PostCard';
+import { Divider, PostCard } from '../../components';
 
 const Posts = ({ posts }) => {
   return (
     <Box>
       <Heading>Posts</Heading>
+      <Divider />
       <Box>
         {posts.map((post, index) => (
           <PostCard key={index} post={post} />

@@ -58,7 +58,7 @@ const Navbar = () => {
             <LinkItem href="/works" path={router.path}>
               Works
             </LinkItem>
-            <Button onClick={toggleColorMode}>
+            <Button onClick={toggleColorMode} ml={5}>
               {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
             </Button>
           </Box>

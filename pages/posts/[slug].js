@@ -1,25 +1,20 @@
 /* eslint-disable react/no-children-prop */
+import Image from 'next/image';
 import {
   Heading,
   Box,
   Text,
   UnorderedList,
   ListItem,
-  Code,
   OrderedList,
+  Link,
 } from '@chakra-ui/react';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import ReactMarkdown from 'react-markdown';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { nightOwl } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
-
-//  code: ({ node, ...props }) => (
-//               <Code wordBreak={'break-word'} {...props} />
-//             ),
-
-//https://www.google.com/search?q=css+hide+scroll+bar&rlz=1C1CHBF_en-GBGB805GB805&oq=css+hide+scroll+ba&aqs=chrome.0.69i59j69i57j69i60.3073j0j7&sourceid=chrome&ie=UTF-8
+import { atelierLakesideDark } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 
 const PostPage = ({
   frontmatter: { title, category, date, cover_image, author, author_image },
@@ -27,32 +22,36 @@ const PostPage = ({
   slug,
 }) => {
   return (
-    <Box>
+    <Box style={{ scrollbarWidth: 'none!' }}>
       <Heading>{title}</Heading>
-
+      <Text>{date}</Text>
       <Box className="md">
         <ReactMarkdown
           components={{
-            h1: ({ node, ...props }) => <Heading {...props} />,
-            p: ({ node, ...props }) => <Text {...props} />,
+            h1: ({ node, ...props }) => <Heading as={'h1'} {...props} />,
+            h2: ({ node, ...props }) => <Heading as={'h2'} {...props} />,
+            h3: ({ node, ...props }) => <Heading as={'h3'} {...props} />,
+            h4: ({ node, ...props }) => <Heading as={'h4'} {...props} />,
+            div: ({ node, ...props }) => <Box {...props} />,
+            p: ({ node, ...props }) => <Text py={1} {...props} />,
             ul: ({ node, ordered = 'false', ...props }) => (
               <UnorderedList {...props} />
-            ),
-            li: ({ node, ordered = 'false', ...props }) => (
-              <ListItem {...props} />
             ),
             ol: ({ node, ordered = 'true', ...props }) => (
               <OrderedList {...props} />
             ),
-
+            li: ({ node, ordered = 'false', ...props }) => (
+              <ListItem {...props} />
+            ),
+            a: ({ node, ...props }) => <Link {...props} />,
             code({ node, inline, className, children, ...props }) {
               const match = /language-(\w+)/.exec(className || '');
               return !inline && match ? (
                 <SyntaxHighlighter
                   children={String(children).replace(/\n$/, '')}
-                  style={nightOwl}
+                  style={atelierLakesideDark}
                   language={match[1]}
-                  PreTag="div"
+                  PreTag="code"
                   {...props}
                 />
               ) : (

@@ -1,9 +1,33 @@
-import { Box, Heading } from '@chakra-ui/react';
+import { Box, Grid, Heading, SimpleGrid } from '@chakra-ui/react';
+import { Divider } from '../../components';
+import WorkItem from '../../components/WorkItem';
+
+import thumbHulu from '../../public/hulu_clone.png';
+import thumbCalc from '../../public/calcusearch.png';
 
 const Works = () => {
   return (
     <Box>
       <Heading>Works</Heading>
+      <Divider />
+      <SimpleGrid columns={[1, 2]} spacing={10}>
+        <WorkItem
+          id="hulu_clone"
+          title="Hulu clone"
+          link={'https://hulu-clone-rho-ten.vercel.app/'}
+          thumbnail={thumbHulu}
+        >
+          A clone of the hulu site
+        </WorkItem>
+        <WorkItem
+          id="calcusearch"
+          title="Calcu-search"
+          link={'https://calcusearch.vercel.app/'}
+          thumbnail={thumbCalc}
+        >
+          calculator with wikipedia facts based on numbers
+        </WorkItem>
+      </SimpleGrid>
     </Box>
   );
 };
