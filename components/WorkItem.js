@@ -13,19 +13,28 @@ import {
 
 const WorkItem = ({ id, title, children, link, thumbnail }) => {
   return (
-    <Box w={'100%'} textAlign={'center'}>
+    <Box
+      border={'1px'}
+      borderRadius={'2xl'}
+      overflow={'hidden'}
+      borderColor={'blackAlpha.600'}
+      shadow={'dark-lg'}
+    >
       <Image src={thumbnail} placeholder="blur" loading="lazy" alt={title} />
-      <Heading as={'h2'}>
-        <NextLink href={`/works/${id}`}>
-          <Link cursor={'pointer'}>{title}</Link>
-        </NextLink>
-      </Heading>
-      <Text>{children}</Text>
-      <Box>
-        <Link mr={6} href={link}>
-          Github repo
-        </Link>
-        <Link href={link}>Live site</Link>
+      <Box p={4}>
+        <Heading as={'h2'} size={'lg'}>
+          <NextLink href={`/works/${id}`}>
+            <Link cursor={'pointer'}>{title}</Link>
+          </NextLink>
+        </Heading>
+        <Text fontSize={'sm'} py={1}>
+          {children}
+        </Text>
+        <Flex gap={2} py={2} justify={'flex-end'}>
+          <Link href={link}>Github repo</Link>
+          <Link href={link}>Blog</Link>
+          <Link href={link}>Live site</Link>
+        </Flex>
       </Box>
     </Box>
   );
