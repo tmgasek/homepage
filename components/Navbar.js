@@ -48,7 +48,6 @@ const Navbar = () => {
             </NextLink>
           </Box>
 
-<<<<<<< HEAD
           <Flex>
             <Box display={{ base: 'none', sm: 'flex' }}>
               <LinkItem href="/" path={router.path}>
@@ -63,24 +62,9 @@ const Navbar = () => {
             </Box>
 
             <Button onClick={toggleColorMode} ml={5} w={'1'}>
-=======
-          <Box display={{ base: 'none', sm: 'block' }}>
-            <LinkItem href="/" path={router.path}>
-              Home
-            </LinkItem>
-            <LinkItem href="/posts" path={router.path}>
-              Posts
-            </LinkItem>
-            <LinkItem href="/works" path={router.path}>
-              Works
-            </LinkItem>
-
-            <Button onClick={toggleColorMode} ml={5}>
->>>>>>> a7a5b95 (rebasing)
               {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
             </Button>
 
-<<<<<<< HEAD
             <Box
               flex={1}
               align="right"
@@ -109,31 +93,6 @@ const Navbar = () => {
               </Box>
             </Box>
           </Flex>
-=======
-          <Box display={{ base: 'inline-block', sm: 'none' }}>
-            <Box ml={2}>
-              <Menu>
-                <MenuButton
-                  as={IconButton}
-                  icon={<HamburgerIcon />}
-                  variant="outline"
-                  aria-label="Options"
-                />
-                <MenuList>
-                  <NextLink href="/" passHref>
-                    <MenuItem as={Link}>Home</MenuItem>
-                  </NextLink>
-                  <NextLink href="/works" passHref>
-                    <MenuItem as={Link}>Works</MenuItem>
-                  </NextLink>
-                  <NextLink href="/posts" passHref>
-                    <MenuItem as={Link}>Posts</MenuItem>
-                  </NextLink>
-                </MenuList>
-              </Menu>
-            </Box>
-          </Box>
->>>>>>> a7a5b95 (rebasing)
         </Flex>
       </Container>
     </Box>

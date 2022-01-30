@@ -2,7 +2,6 @@ import NextLink from 'next/link';
 import { Box, Heading, Link, Text } from '@chakra-ui/react';
 
 const PostCard = ({ post }) => {
-  console.log(post);
   return (
     <Box mt={2}>
       <NextLink href={`/posts/${post.slug}`}>

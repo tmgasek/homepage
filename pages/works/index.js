@@ -3,11 +3,13 @@ import { WorkItem } from '../../components';
 
 import thumbHulu from '../../public/hulu_clone.png';
 import thumbCalc from '../../public/calcusearch.png';
+import Divider from '../../components/Divider';
 
 const Works = () => {
   return (
     <Box>
       <Heading>Works</Heading>
+      <Divider />
 
       <SimpleGrid columns={[1, 2]} spacing={10} my={4}>
         <WorkItem

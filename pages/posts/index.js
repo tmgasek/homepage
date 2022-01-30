@@ -1,11 +1,13 @@
 import { Box, Heading } from '@chakra-ui/react';
 import { getPosts } from '../../lib';
 import { PostCard } from '../../components';
+import Divider from '../../components/Divider';
 
 const Posts = ({ posts }) => {
   return (
     <Box>
       <Heading>Posts</Heading>
+      <Divider />
 
       <Box>
         {posts.map((post, index) => (

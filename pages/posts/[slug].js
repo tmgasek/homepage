@@ -15,6 +15,7 @@ import matter from 'gray-matter';
 import ReactMarkdown from 'react-markdown';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atelierLakesideDark } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
+import Divider from '../../components/Divider';
 
 const PostPage = ({
   frontmatter: { title, category, date, cover_image, author, author_image },
@@ -24,6 +25,7 @@ const PostPage = ({
   return (
     <Box style={{ scrollbarWidth: 'none!' }}>
       <Heading>{title}</Heading>
+      <Divider />
       <Text>{date}</Text>
       <Box className="md">
         <ReactMarkdown

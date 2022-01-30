@@ -21,7 +21,7 @@ const WorkItem = ({ id, title, children, link, thumbnail }) => {
       shadow={'dark-lg'}
     >
       <Image src={thumbnail} placeholder="blur" loading="lazy" alt={title} />
-      <Box p={4}>
+      <Box px={2}>
         <Heading as={'h2'} size={'lg'}>
           <NextLink href={`/works/${id}`}>
             <Link cursor={'pointer'}>{title}</Link>
