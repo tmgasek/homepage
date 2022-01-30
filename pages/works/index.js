@@ -3,6 +3,7 @@ import { WorkItem } from '../../components';
 
 import thumbHulu from '../../public/hulu_clone.png';
 import thumbCalc from '../../public/calcusearch.png';
+import thumbGuitar from '../../public/guitar-practice-app.png';
 import Divider from '../../components/Divider';
 
 const Works = () => {
@@ -11,23 +12,31 @@ const Works = () => {
       <Heading>Works</Heading>
       <Divider />
 
-      <SimpleGrid columns={[1, 2]} spacing={10} my={4}>
+      <SimpleGrid columns={[1, 2]} gap={5} my={4}>
         <WorkItem
-          id="hulu_clone"
+          id="hulu-clone"
           title="Hulu clone"
-          link={'https://hulu-clone-rho-ten.vercel.app/'}
+          githubLink={'#'}
+          liveLink={'https://hulu-clone-rho-ten.vercel.app/'}
+          blogLink={'#'}
           thumbnail={thumbHulu}
-        >
-          A clone of the hulu site
-        </WorkItem>
+        />
         <WorkItem
           id="calcusearch"
-          title="Calcu-search"
-          link={'https://calcusearch.vercel.app/'}
+          title="Calcu-search "
+          githubLink={'#'}
+          liveLink={'https://calcusearch.vercel.app/'}
+          blogLink={'#'}
           thumbnail={thumbCalc}
-        >
-          calculator with wikipedia facts based on numbers
-        </WorkItem>
+        />
+        <WorkItem
+          id="guitar-app"
+          title="Guitar Practice App "
+          githubLink={'#'}
+          liveLink={'https://guitar-practice-app.vercel.app/'}
+          blogLink={'#'}
+          thumbnail={thumbGuitar}
+        />
       </SimpleGrid>
     </Box>
   );
