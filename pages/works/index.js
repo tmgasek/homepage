@@ -1,6 +1,5 @@
 import { Box, Grid, Heading, SimpleGrid } from '@chakra-ui/react';
-import { Divider } from '../../components';
-import WorkItem from '../../components/WorkItem';
+import { WorkItem } from '../../components';
 
 import thumbHulu from '../../public/hulu_clone.png';
 import thumbCalc from '../../public/calcusearch.png';
@@ -9,8 +8,8 @@ const Works = () => {
   return (
     <Box>
       <Heading>Works</Heading>
-      <Divider />
-      <SimpleGrid columns={[1, 2]} spacing={10}>
+
+      <SimpleGrid columns={[1, 2]} spacing={10} my={4}>
         <WorkItem
           id="hulu_clone"
           title="Hulu clone"
