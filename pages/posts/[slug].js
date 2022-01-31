@@ -17,11 +17,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atelierLakesideDark } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import Divider from '../../components/Divider';
 
-const PostPage = ({
-  frontmatter: { title, category, date, cover_image, author, author_image },
-  content,
-  slug,
-}) => {
+const PostPage = ({ frontmatter: { title, category, date }, content }) => {
   return (
     <Box style={{ scrollbarWidth: 'none!' }}>
       <Heading>{title}</Heading>

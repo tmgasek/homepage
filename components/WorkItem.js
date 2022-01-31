@@ -1,6 +1,6 @@
 import NextLink from 'next/link';
 import Image from 'next/image';
-import { AiFillGithub, AiOutlineRight } from 'react-icons/ai';
+import { AiFillGithub } from 'react-icons/ai';
 
 import {
   Box,
@@ -52,7 +52,7 @@ const WorkItem = ({
             </Button>
           </Link>
           <Link href={blogLink}>
-            <Button size={'sm'}>Blog</Button>
+            <Button size={'sm'}>About</Button>
           </Link>
           <Link href={liveLink}>
             <Button size={'sm'}>Live site</Button>
@@ -64,14 +64,3 @@ const WorkItem = ({
 };
 
 export default WorkItem;
-
-// <Box w={'100%'}>
-//   <NextLink href={`/works/${id}`}>
-//     <LinkBox cursor={'pointer'}>
-//       <LinkOverlay href={`/works/${id}`}>
-//         <Heading>{title}</Heading>
-//       </LinkOverlay>
-//       <Text>{children}</Text>
-//     </LinkBox>
-//   </NextLink>
-// </Box>
