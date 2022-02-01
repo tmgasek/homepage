@@ -1,5 +1,3 @@
-/* eslint-disable react/no-children-prop */
-import Image from 'next/image';
 import {
   Heading,
   Box,
@@ -14,56 +12,66 @@ import path from 'path';
 import matter from 'gray-matter';
 import ReactMarkdown from 'react-markdown';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { atelierLakesideDark } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
-import Divider from '../../components/Divider';
+import { nightOwl } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
+import { Divider, Layout } from '../../components';
 
 const PostPage = ({ frontmatter: { title, category, date }, content }) => {
   return (
-    <Box style={{ scrollbarWidth: 'none!' }}>
-      <Heading>{title}</Heading>
-      <Divider />
-      <Text>{date}</Text>
-      <Box className="md">
-        <ReactMarkdown
-          components={{
-            h1: ({ node, ...props }) => <Heading as={'h1'} {...props} />,
-            h2: ({ node, ...props }) => <Heading as={'h2'} {...props} />,
-            h3: ({ node, ...props }) => <Heading as={'h3'} {...props} />,
-            h4: ({ node, ...props }) => <Heading as={'h4'} {...props} />,
-            div: ({ node, ...props }) => <Box {...props} />,
-            p: ({ node, ...props }) => <Text py={1} {...props} />,
-            ul: ({ node, ordered = 'false', ...props }) => (
-              <UnorderedList {...props} />
-            ),
-            ol: ({ node, ordered = 'true', ...props }) => (
-              <OrderedList {...props} />
-            ),
-            li: ({ node, ordered = 'false', ...props }) => (
-              <ListItem {...props} />
-            ),
-            a: ({ node, ...props }) => <Link {...props} />,
-            code({ node, inline, className, children, ...props }) {
-              const match = /language-(\w+)/.exec(className || '');
-              return !inline && match ? (
-                <SyntaxHighlighter
-                  children={String(children).replace(/\n$/, '')}
-                  style={atelierLakesideDark}
-                  language={match[1]}
-                  PreTag="code"
-                  {...props}
-                />
-              ) : (
-                <code className={className} {...props}>
-                  {children}
-                </code>
-              );
-            },
-          }}
-        >
-          {content}
-        </ReactMarkdown>
+    <Layout title={`Tomasz Gasek - ${title}`}>
+      <Box style={{ scrollbarWidth: 'none!' }}>
+        <Heading size={'2xl'} my={4}>
+          {title}
+        </Heading>
+        <Divider />
+        <Text>{date}</Text>
+        <Box className="md">
+          <ReactMarkdown
+            components={{
+              h1: ({ node, ...props }) => (
+                <Heading as={'h1'} size={'2xl'} my={4} {...props} />
+              ),
+              h2: ({ node, ...props }) => (
+                <Heading as={'h2'} size={'lg'} my={4} {...props} />
+              ),
+              h3: ({ node, ...props }) => (
+                <Heading as={'h3'} size={'md'} my={4} {...props} />
+              ),
+              div: ({ node, ...props }) => <Box my={4} {...props} />,
+              p: ({ node, ...props }) => <Text my={2} {...props} />,
+              ul: ({ node, ordered = 'false', ...props }) => (
+                <UnorderedList {...props} />
+              ),
+              ol: ({ node, ordered = 'true', ...props }) => (
+                <OrderedList {...props} />
+              ),
+              li: ({ node, ordered = 'false', ...props }) => (
+                <ListItem my={1} {...props} />
+              ),
+              a: ({ node, ...props }) => <Link {...props} />,
+              code({ node, inline, className, children, ...props }) {
+                const match = /language-(\w+)/.exec(className || '');
+                return !inline && match ? (
+                  <SyntaxHighlighter
+                    style={nightOwl}
+                    language={match[1]}
+                    PreTag="code"
+                    {...props}
+                  >
+                    {String(children).replace(/\n$/, '')}
+                  </SyntaxHighlighter>
+                ) : (
+                  <code className={className} {...props}>
+                    {children}
+                  </code>
+                );
+              },
+            }}
+          >
+            {content}
+          </ReactMarkdown>
+        </Box>
       </Box>
-    </Box>
+    </Layout>
   );
 };
 

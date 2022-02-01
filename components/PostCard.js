@@ -3,11 +3,11 @@ import { Box, Heading, Link, Text } from '@chakra-ui/react';
 
 const PostCard = ({ post }) => {
   return (
-    <Box mt={2}>
+    <Box mt={4}>
       <NextLink href={`/posts/${post.slug}`}>
         <Link>
           <Heading isTruncated size={'md'}>
-            {post.frontmatter.title}
+            {post.frontmatter.title}{' '}
           </Heading>
         </Link>
       </NextLink>

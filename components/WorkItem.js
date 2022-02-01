@@ -35,10 +35,8 @@ const WorkItem = ({
       <Image src={thumbnail} placeholder="blur" loading="lazy" alt={title} />
       <Box px={2}>
         <Box>
-          <Heading as={'h2'} size={'lg'}>
-            <NextLink href={`/works/${id}`}>
-              <Link cursor={'pointer'}>{title}</Link>
-            </NextLink>
+          <Heading as={'h2'} size={'lg'} fontWeight={'light'}>
+            {title}
           </Heading>
           <Text fontSize={'sm'} py={1}>
             {children}

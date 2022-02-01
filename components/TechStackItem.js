@@ -4,7 +4,7 @@ import { ChevronRightIcon } from '@chakra-ui/icons';
 const TechStackItem = ({ title, stack }) => {
   return (
     <Box>
-      <Heading size={'md'} mb={1}>
+      <Heading size={'md'} mb={1} fontWeight={'light'}>
         {title}
       </Heading>
       <List>

@@ -14,6 +14,22 @@ const theme = extendTheme({
       },
     }),
   },
+  fonts: {
+    heading: 'Lato',
+    body: 'Lato',
+  },
+  components: {
+    Heading: {
+      baseStyle: {
+        letterSpacing: 'wide',
+      },
+    },
+    Button: {
+      baseStyle: {
+        fontWeight: 'normal',
+      },
+    },
+  },
   colors: {},
 });
 

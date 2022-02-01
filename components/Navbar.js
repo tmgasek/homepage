@@ -3,7 +3,6 @@ import {
   Container,
   Box,
   Link,
-  Stack,
   Heading,
   Flex,
   Menu,
@@ -18,13 +17,32 @@ import { HamburgerIcon } from '@chakra-ui/icons';
 import { SunIcon, MoonIcon } from '@chakra-ui/icons';
 import { useRouter } from 'next/router';
 
-const LinkItem = ({ href, children }) => {
+const LinkItem = ({ href, children, currPath }) => {
+  const isActive = currPath === href;
+
   return (
     <NextLink href={href}>
-      <Link p={2}>{children}</Link>
+      <Link bg={isActive ? 'green.500' : 'transparent'} p={2}>
+        {children}
+      </Link>
     </NextLink>
   );
 };
+
+const links = [
+  {
+    name: 'Home',
+    href: '/',
+  },
+  {
+    name: 'Posts',
+    href: '/posts',
+  },
+  {
+    name: 'Works',
+    href: '/works',
+  },
+];
 
 const Navbar = () => {
   const router = useRouter();
@@ -50,15 +68,11 @@ const Navbar = () => {
 
           <Flex>
             <Box display={{ base: 'none', sm: 'flex' }}>
-              <LinkItem href="/" path={router.path}>
-                About
-              </LinkItem>
-              <LinkItem href="/posts" path={router.path}>
-                Posts
-              </LinkItem>
-              <LinkItem href="/works" path={router.path}>
-                Works
-              </LinkItem>
+              {links.map(({ name, href }) => (
+                <LinkItem key={name} href={href} currPath={router.pathname}>
+                  {name}
+                </LinkItem>
+              ))}
             </Box>
 
             <Button onClick={toggleColorMode} ml={5} w={'1'}>
@@ -79,15 +93,16 @@ const Navbar = () => {
                     aria-label="Options"
                   />
                   <MenuList>
-                    <NextLink href="/" passHref>
-                      <MenuItem as={Link}>About</MenuItem>
-                    </NextLink>
-                    <NextLink href="/works" passHref>
-                      <MenuItem as={Link}>Works</MenuItem>
-                    </NextLink>
-                    <NextLink href="/posts" passHref>
-                      <MenuItem as={Link}>Posts</MenuItem>
-                    </NextLink>
+                    {links.map(({ name, href }) => (
+                      <NextLink
+                        key={name}
+                        href={href}
+                        passHref
+                        currPath={router.pathname}
+                      >
+                        <MenuItem as={Link}>{name}</MenuItem>
+                      </NextLink>
+                    ))}
                   </MenuList>
                 </Menu>
               </Box>

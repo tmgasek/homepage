@@ -2,6 +2,7 @@
 title: 'Developing my guitar practice app'
 date: '31/01/2022'
 excerpt: 'Description of my process of developing a  guitar practice app'
+featured: true
 ---
 
 The idea for the app came from my personal experience playing the guitar and the will to have an application where I can store my different routines for practicing. I have been following Justin Guitar for over half a year now and his site does have a practice assistant, however I have not found it to be very easy to use, despite the courses themselves being very good.
