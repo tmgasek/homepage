@@ -5,6 +5,8 @@ excerpt: 'Description of my process of developing a  guitar practice app'
 featured: true
 ---
 
+![preview](/guitar-practice-app-preview.png)
+
 The idea for the app came from my personal experience playing the guitar and the will to have an application where I can store my different routines for practicing. I have been following Justin Guitar for over half a year now and his site does have a practice assistant, however I have not found it to be very easy to use, despite the courses themselves being very good.
 
 There are many types of routine you can have for guitar practice, namely something along the lines of:

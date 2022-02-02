@@ -10,8 +10,7 @@ import {
   WorkItem,
 } from '../components';
 import { ArrowRightIcon } from '@chakra-ui/icons';
-import thumbHulu from '../public/hulu_clone.png';
-import thumbGuitar from '../public/guitar-practice-app.png';
+import thumbGuitar from '../public/guitar-practice-app-preview.png';
 
 const Home = ({ featuredPosts }) => {
   return (
@@ -84,7 +83,7 @@ const Home = ({ featuredPosts }) => {
               flexDir={['column', 'row']}
             >
               <Heading as={'h2'} size={'lg'} my={2}>
-                Featured Projects
+                Featured Project
               </Heading>
               <NextLink href={'/works'}>
                 <Link>
@@ -93,15 +92,7 @@ const Home = ({ featuredPosts }) => {
                 </Link>
               </NextLink>
             </Flex>
-            <SimpleGrid columns={[1, 2]} gap={4}>
-              <WorkItem
-                id="hulu-clone"
-                title="Hulu clone"
-                githubLink={'https://github.com/tmgasek/hulu-clone'}
-                liveLink={'https://hulu-clone-rho-ten.vercel.app/'}
-                blogLink={'/posts/hulu-clone'}
-                thumbnail={thumbHulu}
-              />
+            <Box>
               <WorkItem
                 id="guitar-app"
                 title="Guitar Practice App "
@@ -110,7 +101,7 @@ const Home = ({ featuredPosts }) => {
                 blogLink={'/posts/guitar-app'}
                 thumbnail={thumbGuitar}
               />
-            </SimpleGrid>
+            </Box>
           </Box>
         </Section>
 

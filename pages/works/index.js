@@ -1,9 +1,9 @@
 import { Box, Grid, Heading, SimpleGrid } from '@chakra-ui/react';
 import { WorkItem, Divider, Layout } from '../../components';
 
-import thumbHulu from '../../public/hulu_clone.png';
+import thumbHulu from '../../public/hulu-clone-preview.png';
 import thumbCalc from '../../public/calcusearch.png';
-import thumbGuitar from '../../public/guitar-practice-app.png';
+import thumbGuitar from '../../public/guitar-practice-app-preview.png';
 
 const Works = () => {
   return (
@@ -12,7 +12,7 @@ const Works = () => {
         <Heading>Works</Heading>
         <Divider />
 
-        <SimpleGrid columns={[1, 2]} gap={5} my={4}>
+        <SimpleGrid columns={[1]} gap={5} my={4}>
           <WorkItem
             id="hulu-clone"
             title="Hulu clone"
@@ -21,14 +21,7 @@ const Works = () => {
             blogLink={'/posts/hulu-clone'}
             thumbnail={thumbHulu}
           />
-          <WorkItem
-            id="calcusearch"
-            title="Calcu-search "
-            githubLink={'https://github.com/tmgasek/calcu-search'}
-            liveLink={'https://calcusearch.vercel.app/'}
-            blogLink={'#'}
-            thumbnail={thumbCalc}
-          />
+
           <WorkItem
             id="guitar-app"
             title="Guitar Practice App "
@@ -36,6 +29,15 @@ const Works = () => {
             liveLink={'https://guitar-practice-app.vercel.app/'}
             blogLink={'/posts/guitar-app'}
             thumbnail={thumbGuitar}
+          />
+
+          <WorkItem
+            id="calcusearch"
+            title="Calcu-search "
+            githubLink={'https://github.com/tmgasek/calcu-search'}
+            liveLink={'https://calcusearch.vercel.app/'}
+            blogLink={'#'}
+            thumbnail={thumbCalc}
           />
         </SimpleGrid>
       </Box>
