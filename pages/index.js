@@ -31,7 +31,7 @@ const Home = ({ featuredPosts }) => {
           </Text>
           <TechStackItem
             stack={[
-              "Learning Java and OOP practices as a student of Software Development at Queen's University Belfast.",
+              "Learning Java and OOP practices as a Software Development student at Queen's University Belfast.",
               'Currently employed part-time as an Unreal Engine 4 / C++ developer in a new game development startup studio.',
               'In my free time I am studying web development, with a focus on React.',
             ]}
@@ -95,17 +95,19 @@ const Home = ({ featuredPosts }) => {
             </Flex>
             <SimpleGrid columns={[1, 2]} gap={4}>
               <WorkItem
-                id="hulu_clone"
+                id="hulu-clone"
                 title="Hulu clone"
-                link={'https://hulu-clone-rho-ten.vercel.app/'}
+                githubLink={'https://github.com/tmgasek/hulu-clone'}
+                liveLink={'https://hulu-clone-rho-ten.vercel.app/'}
+                blogLink={'/posts/hulu-clone'}
                 thumbnail={thumbHulu}
               />
               <WorkItem
                 id="guitar-app"
                 title="Guitar Practice App "
-                githubLink={'#'}
+                githubLink={'https://github.com/tmgasek/guitar-practice-app'}
                 liveLink={'https://guitar-practice-app.vercel.app/'}
-                blogLink={'#'}
+                blogLink={'/posts/guitar-app'}
                 thumbnail={thumbGuitar}
               />
             </SimpleGrid>

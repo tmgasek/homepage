@@ -16,14 +16,24 @@ import {
 import { HamburgerIcon } from '@chakra-ui/icons';
 import { SunIcon, MoonIcon } from '@chakra-ui/icons';
 import { useRouter } from 'next/router';
+import { AnimateSharedLayout, motion } from 'framer-motion';
 
-const LinkItem = ({ href, children, currPath }) => {
+const MotionBox = motion(Box);
+
+const LinkItem = ({ href, children, currPath, colorMode }) => {
   const isActive = currPath === href;
 
   return (
     <NextLink href={href}>
-      <Link bg={isActive ? 'green.500' : 'transparent'} p={2}>
+      <Link p={2}>
         {children}
+        {isActive && (
+          <MotionBox
+            layoutId="nav-underline"
+            className="nav-underline"
+            bg={colorMode === 'dark' ? 'green.500' : 'gray.800'}
+          />
+        )}
       </Link>
     </NextLink>
   );
@@ -49,68 +59,75 @@ const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <Box as={'nav'} pt={4}>
-      <Container maxW={'container.lg'}>
-        <Flex align={'center'} justify={'space-between'}>
-          <Box>
-            <NextLink href="/">
-              <Heading
-                as={'h1'}
-                size={'lg'}
-                letterSpacing={'tighter'}
-                pr={8}
-                cursor={'pointer'}
-              >
-                {'{tmg}'}
-              </Heading>
-            </NextLink>
-          </Box>
-
-          <Flex>
-            <Box display={{ base: 'none', sm: 'flex' }}>
-              {links.map(({ name, href }) => (
-                <LinkItem key={name} href={href} currPath={router.pathname}>
-                  {name}
-                </LinkItem>
-              ))}
+    <AnimateSharedLayout>
+      <Box as={'nav'} pt={4}>
+        <Container maxW={'container.lg'}>
+          <Flex align={'center'} justify={'space-between'}>
+            <Box>
+              <NextLink href="/">
+                <Heading
+                  as={'h1'}
+                  size={'lg'}
+                  letterSpacing={'tighter'}
+                  pr={8}
+                  cursor={'pointer'}
+                >
+                  {'{tmg}'}
+                </Heading>
+              </NextLink>
             </Box>
 
-            <Button onClick={toggleColorMode} ml={5} w={'1'}>
-              {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
-            </Button>
-
-            <Box
-              flex={1}
-              align="right"
-              display={{ base: 'inline-block', sm: 'none' }}
-            >
-              <Box ml={2}>
-                <Menu>
-                  <MenuButton
-                    as={IconButton}
-                    icon={<HamburgerIcon />}
-                    variant="outline"
-                    aria-label="Options"
-                  />
-                  <MenuList>
-                    {links.map(({ name, href }) => (
-                      <NextLink
-                        key={name}
-                        href={href}
-                        passHref
-                        currPath={router.pathname}
-                      >
-                        <MenuItem as={Link}>{name}</MenuItem>
-                      </NextLink>
-                    ))}
-                  </MenuList>
-                </Menu>
+            <Flex>
+              <Box display={{ base: 'none', sm: 'flex' }}>
+                {links.map(({ name, href }) => (
+                  <LinkItem
+                    key={name}
+                    href={href}
+                    currPath={router.pathname}
+                    colorMode={colorMode}
+                  >
+                    {name}
+                  </LinkItem>
+                ))}
               </Box>
-            </Box>
+
+              <Button onClick={toggleColorMode} ml={5} w={'1'}>
+                {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+              </Button>
+
+              <Box
+                flex={1}
+                align="right"
+                display={{ base: 'inline-block', sm: 'none' }}
+              >
+                <Box ml={2}>
+                  <Menu>
+                    <MenuButton
+                      as={IconButton}
+                      icon={<HamburgerIcon />}
+                      variant="outline"
+                      aria-label="Options"
+                    />
+                    <MenuList>
+                      {links.map(({ name, href }) => (
+                        <NextLink
+                          key={name}
+                          href={href}
+                          passHref
+                          currPath={router.pathname}
+                        >
+                          <MenuItem as={Link}>{name}</MenuItem>
+                        </NextLink>
+                      ))}
+                    </MenuList>
+                  </Menu>
+                </Box>
+              </Box>
+            </Flex>
           </Flex>
-        </Flex>
-      </Container>
-    </Box>
+        </Container>
+      </Box>
+    </AnimateSharedLayout>
   );
 };
 

@@ -52,6 +52,10 @@ export async function getStaticProps() {
 This is the first line.  
 And this is the second line.
 
+```js
+const { data: routines, error } = useSWR('/api/getRoutines', fetcher);
+```
+
 Don't put tabs or spaces in front of your paragraphs.
 
 Keep lines left-aligned like this.
