@@ -108,7 +108,9 @@ const Navbar = () => {
                       variant="outline"
                       aria-label="Options"
                     />
-                    <MenuList bg={'#181818'}>
+                    <MenuList
+                      bg={colorMode === 'dark' ? '#181818' : 'gray.200'}
+                    >
                       {links.map(({ name, href }) => (
                         <NextLink
                           key={name}
