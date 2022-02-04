@@ -1,6 +1,6 @@
 ---
 title: 'Creating a Hulu clone website'
-date: '31/01/2022'
+date: '31 Dec, 2021'
 excerpt: 'Description of my process of developing a website inspired by Hulu.'
 ---
 

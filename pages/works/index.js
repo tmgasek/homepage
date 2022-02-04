@@ -5,6 +5,7 @@ import thumbHulu from '../../public/hulu-clone-preview.png';
 import thumbCalc from '../../public/calcusearch.png';
 import thumbGuitar from '../../public/guitar-practice-app-preview.png';
 import thumbDevBlogs from '../../public/dev-blogs.png';
+import thumbTeacher from '../../public/guitar-teacher.png';
 
 const Works = () => {
   return (
@@ -22,7 +23,6 @@ const Works = () => {
             blogLink={'/posts/hulu-clone'}
             thumbnail={thumbHulu}
           />
-
           <WorkItem
             id="guitar-app"
             title="Guitar Practice App"
@@ -31,24 +31,35 @@ const Works = () => {
             blogLink={'/posts/guitar-app'}
             thumbnail={thumbGuitar}
           />
-
           <WorkItem
             id="dev-blogs"
             title="Dev Blogs"
             githubLink={'https://github.com/tmgasek/building-blogs-frontend'}
             liveLink={'https://radiant-fortress-53702.herokuapp.com/'}
-            blogLink={'#'}
+            blogLink={'/posts/dev-blogs'}
             thumbnail={thumbDevBlogs}
-          />
-
+          >
+            (site hosted on Heroku, might take a few seconds longer to load as
+            it sleeps after inactivity)
+          </WorkItem>
           <WorkItem
             id="calcusearch"
             title="Calcu-search "
             githubLink={'https://github.com/tmgasek/calcu-search'}
             liveLink={'https://calcusearch.vercel.app/'}
-            blogLink={'#'}
+            blogLink={'/posts/calcu-search'}
             thumbnail={thumbCalc}
           />
+          <WorkItem
+            id="guitar-teacher"
+            title="Guitar Teaching Business Landing Page "
+            githubLink={'https://github.com/tmgasek/guitar-teaching-business'}
+            liveLink={'https://priceless-shirley-608181.netlify.app/'}
+            blogLink={'/posts/landing-page'}
+            thumbnail={thumbTeacher}
+          >
+            (in progress)
+          </WorkItem>
         </SimpleGrid>
       </Box>
     </Layout>

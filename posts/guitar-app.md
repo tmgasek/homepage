@@ -1,6 +1,6 @@
 ---
 title: 'Developing my guitar practice app'
-date: '31/01/2022'
+date: '31 Jan, 2022'
 excerpt: 'Description of my process of developing a  guitar practice app'
 featured: true
 ---

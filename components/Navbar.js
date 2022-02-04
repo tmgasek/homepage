@@ -24,8 +24,8 @@ const LinkItem = ({ href, children, currPath, colorMode }) => {
   const isActive = currPath === href;
 
   return (
-    <NextLink href={href}>
-      <Link p={2}>
+    <NextLink href={href} passHref>
+      <Link p={2} _focus={{ outlineColor: 'none' }}>
         {children}
         {isActive && (
           <MotionBox
@@ -68,9 +68,9 @@ const Navbar = () => {
                 <Heading
                   as={'h1'}
                   size={'lg'}
-                  letterSpacing={'tighter'}
                   pr={8}
                   cursor={'pointer'}
+                  letterSpacing={'widest'}
                 >
                   {'{tmg}'}
                 </Heading>
@@ -108,7 +108,7 @@ const Navbar = () => {
                       variant="outline"
                       aria-label="Options"
                     />
-                    <MenuList>
+                    <MenuList bg={'#181818'}>
                       {links.map(({ name, href }) => (
                         <NextLink
                           key={name}

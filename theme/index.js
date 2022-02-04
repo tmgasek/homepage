@@ -9,19 +9,23 @@ const theme = extendTheme({
   styles: {
     global: (props) => ({
       'html, body': {
-        color: mode('gray.800', 'whiteAlpha.900')(props),
-        bg: mode('gray.200', 'gray.800')(props),
+        color: mode('gray.800', 'whiteAlpha.800')(props),
+        bg: mode('gray.200', '#181818')(props),
+      },
+      a: {
+        _focus: {},
       },
     }),
   },
   fonts: {
-    heading: 'Lato',
-    body: 'Lato',
+    heading: 'IBM Plex Sans Thai Looped',
+    body: 'IBM Plex Sans Thai Looped',
   },
   components: {
     Heading: {
       baseStyle: {
         letterSpacing: 'wide',
+        fontWeight: 'semibold',
       },
     },
     Button: {

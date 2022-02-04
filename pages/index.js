@@ -85,7 +85,7 @@ const Home = ({ featuredPosts }) => {
               <Heading as={'h2'} size={'lg'} my={2}>
                 Featured Project
               </Heading>
-              <NextLink href={'/works'}>
+              <NextLink href={'/works'} passHref>
                 <Link>
                   <ArrowRightIcon mx={2} color={'green.500'} />
                   View all projects
@@ -116,7 +116,7 @@ const Home = ({ featuredPosts }) => {
               <Heading as={'h2'} size={'lg'} my={2}>
                 Featured Posts
               </Heading>
-              <NextLink href={'/posts'}>
+              <NextLink href={'/posts'} passHref>
                 <Link>
                   <ArrowRightIcon mx={2} color={'green.500'} />
                   View all posts
