@@ -97,7 +97,6 @@ const Navbar = () => {
                 pb={1}
                 size={'sm'}
                 onClick={toggleColorMode}
-                display={{ base: 'none', sm: 'inline-block' }}
                 _hover={{
                   background: colorMode === 'light' ? 'yellow.500' : 'gray.600',
                 }}
@@ -115,6 +114,7 @@ const Navbar = () => {
                 <Box ml={2}>
                   <Menu>
                     <MenuButton
+                      size={'sm'}
                       as={IconButton}
                       icon={<HamburgerIcon />}
                       variant="outline"
