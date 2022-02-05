@@ -119,41 +119,51 @@ export default handler;
 This API route got called in **\_app.js**
 
 ```js
-useEffect(() => {
-  //fires when user signs in / out
-  const { data: authListener } = supabase.auth.onAuthStateChange(
-    (event, session) => {
-      updateSupabaseCookie(event, session);
-      if (event === 'SIGNED_IN') {
-        setIsLoggedIn(true);
-        router.push('/');
+function MyApp({ Component, pageProps }) {
+  const router = useRouter();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    //fires when user signs in / out
+    const { data: authListener } = supabase.auth.onAuthStateChange(
+      (event, session) => {
+        updateSupabaseCookie(event, session);
+        if (event === 'SIGNED_IN') {
+          setIsLoggedIn(true);
+          router.push('/');
+        }
+        if (event === 'SIGNED_OUT') {
+          setIsLoggedIn(false);
+          router.push('/login');
+        }
       }
-      if (event === 'SIGNED_OUT') {
-        setIsLoggedIn(false);
-        router.push('/login');
-      }
+    );
+    checkUser();
+    return () => {
+      authListener?.unsubscribe();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const checkUser = async () => {
+    const user = supabase.auth.user();
+    if (user) {
+      setIsLoggedIn(true);
     }
-  );
-  checkUser();
-  return () => {
-    authListener?.unsubscribe();
   };
-}, []);
 
-const checkUser = async () => {
-  const user = await supabase.auth.user();
-  if (user) {
-    setIsLoggedIn(true);
+  async function updateSupabaseCookie(event, session) {
+    await fetch('/api/auth', {
+      method: 'POST',
+      headers: new Headers({ 'Content-Type': 'application/json' }),
+      credentials: 'same-origin',
+      body: JSON.stringify({ event, session }),
+    });
   }
-};
 
-async function updateSupabaseCookie(event, session) {
-  await fetch('/api/auth', {
-    method: 'POST',
-    headers: new Headers({ 'Content-Type': 'application/json' }),
-    credentials: 'same-origin',
-    body: JSON.stringify({ event, session }),
-  });
+  // return (
+  //   ...
+  // )
 }
 ```
 

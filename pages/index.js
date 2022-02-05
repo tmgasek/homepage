@@ -68,7 +68,15 @@ const Home = ({ featuredPosts }) => {
               />
               <TechStackItem
                 title={'Others'}
-                stack={['Jest', 'GraphQL', 'C++ with UE4', 'OOP Practices']}
+                stack={[
+                  'Git',
+                  'Linux',
+                  'Jest',
+                  'Cypress',
+                  'GraphQL',
+                  'C++ with UE4',
+                  'OOP Practices',
+                ]}
               />
             </SimpleGrid>
           </Box>

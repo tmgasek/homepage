@@ -35,7 +35,7 @@ const WorkItem = ({
 
         <Flex gap={[1, 2]} py={2} align={'center'}>
           <NextLink href={githubLink} passHref>
-            <Link>
+            <Link isExternal>
               <Button size={'sm'} variant={'ghost'}>
                 <Icon as={AiFillGithub} w={5} h={5} />
               </Button>
@@ -47,7 +47,7 @@ const WorkItem = ({
             </Link>
           </NextLink>
           <NextLink href={liveLink} passHref>
-            <Link>
+            <Link isExternal>
               <Button size={'sm'}>Live site</Button>
             </Link>
           </NextLink>

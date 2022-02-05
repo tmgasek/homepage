@@ -1,10 +1,3 @@
----
-title: 'test'
-date: '7 May, 2021'
-excerpt: 'In this review, we will be looking at the new Python book from Oriley'
-cover_image: '/images/posts/img6.jpg'
----
-
 # Heading 1
 
 ## Heading 2

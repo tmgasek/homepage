@@ -9,8 +9,8 @@ const TechStackItem = ({ title, stack }) => {
       </Heading>
       <List>
         {stack.map((item) => (
-          <ListItem key={item}>
-            <ListIcon as={ChevronRightIcon} color="green.500" />
+          <ListItem key={item} display={'flex'} alignItems={'flex-start'}>
+            <ListIcon as={ChevronRightIcon} mt={1} color="green.500" />
             {item}
           </ListItem>
         ))}

@@ -18,8 +18,8 @@ const theme = extendTheme({
     }),
   },
   fonts: {
-    heading: 'IBM Plex Sans Thai Looped',
-    body: 'IBM Plex Sans Thai Looped',
+    heading: 'Lora',
+    body: 'Titillium Web',
   },
   components: {
     Heading: {

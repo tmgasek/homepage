@@ -6,16 +6,22 @@ import {
   ListItem,
   OrderedList,
   Link,
+  useColorMode,
 } from '@chakra-ui/react';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import ReactMarkdown from 'react-markdown';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { nightOwl } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
+import {
+  nightOwl,
+  atomOneDark,
+} from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import { Divider, Layout } from '../../components';
 
 const PostPage = ({ frontmatter: { title, category, date }, content }) => {
+  const { colorMode, toggleColorMode } = useColorMode();
+
   return (
     <Layout title={`Tomasz Gasek - ${title}`}>
       <Box style={{ scrollbarWidth: 'none!' }}>
@@ -28,13 +34,22 @@ const PostPage = ({ frontmatter: { title, category, date }, content }) => {
           <ReactMarkdown
             components={{
               h1: ({ node, ...props }) => (
-                <Heading as={'h1'} size={'2xl'} my={4} {...props} />
+                <Box>
+                  <Heading as={'h1'} size={'xl'} mt={4} mb={2} {...props} />
+                  <Divider />
+                </Box>
               ),
               h2: ({ node, ...props }) => (
-                <Heading as={'h2'} size={'lg'} my={4} {...props} />
+                <Heading
+                  as={'h2'}
+                  fontSize={['xl', null, '2xl']}
+                  mt={4}
+                  mb={2}
+                  {...props}
+                />
               ),
               h3: ({ node, ...props }) => (
-                <Heading as={'h3'} size={'md'} my={4} {...props} />
+                <Heading as={'h3'} fontSize={'xl'} mt={4} mb={2} {...props} />
               ),
               div: ({ node, ...props }) => <Box my={4} {...props} />,
               p: ({ node, ...props }) => <Text my={2} {...props} />,
@@ -50,15 +65,17 @@ const PostPage = ({ frontmatter: { title, category, date }, content }) => {
               a: ({ node, ...props }) => <Link {...props} />,
               code({ node, inline, className, children, ...props }) {
                 const match = /language-(\w+)/.exec(className || '');
+
                 return !inline && match ? (
                   <SyntaxHighlighter
-                    style={nightOwl}
-                    language={match[1]}
+                    // eslint-disable-next-line react/no-children-prop
+                    children={String(children).replace(/\n$/, '')}
+                    style={colorMode === 'light' ? nightOwl : atomOneDark}
+                    //this converts 'js' to 'avascript' from match[] as 'js' does not seem to highlight correctly
+                    language={match[1] === 'js' ? 'javascript' : match[1]}
                     PreTag="code"
                     {...props}
-                  >
-                    {String(children).replace(/\n$/, '')}
-                  </SyntaxHighlighter>
+                  />
                 ) : (
                   <code className={className} {...props}>
                     {children}

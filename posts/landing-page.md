@@ -5,3 +5,5 @@ excerpt: 'Developing a guitar teaching business landing page'
 ---
 
 ![preview](/guitar-teacher.png)
+
+#IN PROGRESS

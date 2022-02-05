@@ -70,7 +70,7 @@ const Navbar = () => {
                   size={'lg'}
                   pr={8}
                   cursor={'pointer'}
-                  letterSpacing={'widest'}
+                  letterSpacing={'wide'}
                 >
                   {'{tmg}'}
                 </Heading>

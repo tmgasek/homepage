@@ -43,7 +43,7 @@ const Works = () => {
             it sleeps after inactivity)
           </WorkItem>
           <WorkItem
-            id="calcusearch"
+            id="calcu-search"
             title="Calcu-search "
             githubLink={'https://github.com/tmgasek/calcu-search'}
             liveLink={'https://calcusearch.vercel.app/'}
