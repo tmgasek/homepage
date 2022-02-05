@@ -28,14 +28,14 @@ const WorkItem = ({
         <Flex gap={[1, 2]} py={2} align={'center'}>
           <NextLink href={githubLink} passHref>
             <Link isExternal>
-              <Button size={'sm'} variant={'ghost'}>
+              <Button size={'sm'}>
                 <Icon as={AiFillGithub} w={5} h={5} />
               </Button>
             </Link>
           </NextLink>
           <NextLink href={blogLink} passHref>
             <Link>
-              <Button size={'sm'} colorScheme={'orange'}>
+              <Button size={'sm'} colorScheme={'gray'}>
                 About
               </Button>
             </Link>

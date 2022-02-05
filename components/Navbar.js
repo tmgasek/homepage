@@ -77,7 +77,7 @@ const Navbar = () => {
               </NextLink>
             </Box>
 
-            <Flex>
+            <Flex align={'center'}>
               <Box display={{ base: 'none', sm: 'flex' }}>
                 {links.map(({ name, href }) => (
                   <LinkItem
@@ -92,10 +92,17 @@ const Navbar = () => {
               </Box>
 
               <Button
+                variant={'unstyled'}
+                mx={2}
+                pb={1}
+                size={'sm'}
                 onClick={toggleColorMode}
-                ml={5}
-                w={'1'}
-                colorScheme={'orange'}
+                display={{ base: 'none', sm: 'inline-block' }}
+                _hover={{
+                  background: colorMode === 'light' ? 'yellow.500' : 'gray.600',
+                }}
+                color={colorMode === 'light' ? 'white' : 'black'}
+                bg={colorMode === 'light' ? 'gray.600' : 'yellow.500'}
               >
                 {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
               </Button>
