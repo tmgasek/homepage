@@ -30,7 +30,7 @@ const theme = extendTheme({
     },
     Button: {
       baseStyle: {
-        fontWeight: 'normal',
+        fontWeight: 'semibold',
       },
     },
   },

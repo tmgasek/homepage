@@ -13,15 +13,7 @@ const WorkItem = ({
   thumbnail,
 }) => {
   return (
-    <Box
-      border={'1px'}
-      borderRadius={'md'}
-      overflow={'hidden'}
-      borderColor={'blackAlpha.800'}
-      bg={'blackAlpha.300'}
-      shadow={'xl'}
-      position={'relative'}
-    >
+    <Box overflow={'hidden'} shadow={'xl'} position={'relative'}>
       <Image src={thumbnail} placeholder="blur" loading="lazy" alt={title} />
       <Box px={4} pb={2}>
         <Box>
@@ -43,12 +35,16 @@ const WorkItem = ({
           </NextLink>
           <NextLink href={blogLink} passHref>
             <Link>
-              <Button size={'sm'}>About</Button>
+              <Button size={'sm'} colorScheme={'orange'}>
+                About
+              </Button>
             </Link>
           </NextLink>
           <NextLink href={liveLink} passHref>
             <Link isExternal>
-              <Button size={'sm'}>Live site</Button>
+              <Button size={'sm'} colorScheme={'green'}>
+                Live site
+              </Button>
             </Link>
           </NextLink>
         </Flex>

@@ -91,7 +91,12 @@ const Navbar = () => {
                 ))}
               </Box>
 
-              <Button onClick={toggleColorMode} ml={5} w={'1'}>
+              <Button
+                onClick={toggleColorMode}
+                ml={5}
+                w={'1'}
+                colorScheme={'orange'}
+              >
                 {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
               </Button>
 
