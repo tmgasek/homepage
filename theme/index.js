@@ -10,7 +10,7 @@ const theme = extendTheme({
     global: (props) => ({
       'html, body': {
         color: mode('gray.800', 'whiteAlpha.800')(props),
-        bg: mode('gray.200', '#181818')(props),
+        bg: mode('#FAFAFA', '#242526')(props),
       },
       a: {
         _focus: {},
