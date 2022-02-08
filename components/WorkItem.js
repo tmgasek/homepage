@@ -2,7 +2,16 @@ import NextLink from 'next/link';
 import Image from 'next/image';
 import { AiFillGithub } from 'react-icons/ai';
 
-import { Box, Heading, Text, Link, Flex, Icon, Button } from '@chakra-ui/react';
+import {
+  Box,
+  Heading,
+  Text,
+  Link,
+  Flex,
+  Icon,
+  Button,
+  useColorMode,
+} from '@chakra-ui/react';
 
 const WorkItem = ({
   title,
@@ -12,8 +21,13 @@ const WorkItem = ({
   blogLink,
   thumbnail,
 }) => {
+  const { colorMode } = useColorMode();
   return (
-    <Box overflow={'hidden'} shadow={'xl'} position={'relative'}>
+    <Box
+      overflow={'hidden'}
+      shadow={colorMode === 'dark' ? 'dark-lg' : 'xl'}
+      position={'relative'}
+    >
       <Image src={thumbnail} placeholder="blur" loading="lazy" alt={title} />
       <Box px={4} pb={2}>
         <Box>

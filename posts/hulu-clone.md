@@ -6,8 +6,6 @@ excerpt: 'Description of my process of developing a website inspired by Hulu.'
 
 ![preview](/hulu-clone-preview.png)
 
-# Hulu clone developer blog
-
 My aim for this project was to create a website where the user can view and search for movies and TV shows. The data is provided by [The Movie Database](https://www.themoviedb.org/) with version 3 of their database being used.
 
 The website has 2 parts:
