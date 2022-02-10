@@ -1,18 +1,23 @@
 import NextLink from 'next/link';
+import {
+  Box,
+  Text,
+  Heading,
+  Flex,
+  SimpleGrid,
+  Link,
+  Button,
+} from '@chakra-ui/react';
+import { ArrowRightIcon } from '@chakra-ui/icons';
 import { getFeaturedPosts } from '../lib';
-import { Box, Text, Heading, Flex, SimpleGrid, Link } from '@chakra-ui/react';
+import { devBlogs, guitarApp } from '../lib/projectData';
 import {
   Divider,
   Layout,
   PostCard,
   Section,
   TechStackItem,
-  ProjectItem,
 } from '../components';
-import { ArrowRightIcon } from '@chakra-ui/icons';
-import thumbGuitar from '../public/guitar-practice-app-preview.png';
-import thumbDevBlogs from '../public/dev-blogs.png';
-import { devBlogs, guitarApp } from '../lib/projectData';
 
 const Home = ({ featuredPosts }) => {
   return (
@@ -96,9 +101,13 @@ const Home = ({ featuredPosts }) => {
                 Featured Projects
               </Heading>
               <NextLink href={'/projects'} passHref>
-                <Link>
-                  <ArrowRightIcon mx={2} color={'green.500'} />
-                  View all projects
+                <Link letterSpacing={'wider'} fontWeight={'semibold'}>
+                  <Button
+                    leftIcon={<ArrowRightIcon color={'green.500'} />}
+                    variant={'outline'}
+                  >
+                    View all projects
+                  </Button>
                 </Link>
               </NextLink>
             </Flex>
@@ -122,8 +131,12 @@ const Home = ({ featuredPosts }) => {
               </Heading>
               <NextLink href={'/posts'} passHref>
                 <Link>
-                  <ArrowRightIcon mx={2} color={'green.500'} />
-                  View all posts
+                  <Button
+                    leftIcon={<ArrowRightIcon color={'green.500'} />}
+                    variant={'outline'}
+                  >
+                    View all posts
+                  </Button>
                 </Link>
               </NextLink>
             </Flex>

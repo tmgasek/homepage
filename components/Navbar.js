@@ -1,4 +1,5 @@
 import NextLink from 'next/link';
+import { useRouter } from 'next/router';
 import {
   Container,
   Box,
@@ -15,10 +16,6 @@ import {
 } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
 import { SunIcon, MoonIcon } from '@chakra-ui/icons';
-import { useRouter } from 'next/router';
-import { LayoutGroup, motion } from 'framer-motion';
-
-// const MotionBox = motion(Box);
 
 const LinkItem = ({ href, children, currPath, colorMode }) => {
   const isActive = currPath === href;

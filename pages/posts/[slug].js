@@ -1,3 +1,12 @@
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+import ReactMarkdown from 'react-markdown';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import {
+  nightOwl,
+  atomOneDark,
+} from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import {
   Heading,
   Box,
@@ -8,15 +17,6 @@ import {
   Link,
   useColorMode,
 } from '@chakra-ui/react';
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
-import ReactMarkdown from 'react-markdown';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import {
-  nightOwl,
-  atomOneDark,
-} from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import { Divider, Layout } from '../../components';
 
 const PostPage = ({ frontmatter: { title, category, date }, content }) => {

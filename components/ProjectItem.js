@@ -1,11 +1,9 @@
 import NextLink from 'next/link';
 import Image from 'next/image';
 import { AiFillGithub } from 'react-icons/ai';
-
 import {
   Box,
   Heading,
-  Text,
   Link,
   Flex,
   Icon,
@@ -30,7 +28,7 @@ const ProjectItem = ({
     >
       <Image src={thumbnail} placeholder="blur" loading="lazy" alt={title} />
       <Box px={4} pb={2}>
-        <Box>
+        <Box mb={2}>
           <Heading as={'h2'} size={'lg'} fontWeight={'light'}>
             {title}
           </Heading>
