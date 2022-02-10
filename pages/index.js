@@ -9,7 +9,7 @@ import {
   Button,
 } from '@chakra-ui/react';
 import { ArrowRightIcon } from '@chakra-ui/icons';
-import { getFeaturedPosts } from '../lib';
+import { getFeaturedPosts } from '../lib/getPosts';
 import { devBlogs, guitarApp } from '../lib/projectData';
 import {
   Divider,

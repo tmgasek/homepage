@@ -1,5 +1,5 @@
 import { Box, Heading } from '@chakra-ui/react';
-import { getPosts } from '../../lib';
+import { getPosts } from '../../lib/getPosts';
 import { PostCard, Divider, Layout } from '../../components';
 
 const Posts = ({ posts }) => {

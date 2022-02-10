@@ -1,5 +1,3 @@
-import '@fontsource/lato';
-
 import '../styles/globals.css';
 import { Box, ChakraProvider } from '@chakra-ui/react';
 import { Navbar } from '../components/';
