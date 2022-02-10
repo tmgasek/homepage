@@ -6,7 +6,7 @@ const PostCard = ({ post }) => {
 
   return (
     <Box mt={4}>
-      <NextLink href={`/posts/${post.slug}`}>
+      <NextLink href={`/posts/${post.slug}`} passHref>
         <Link>
           <Heading isTruncated fontSize={['md', 'xl']}>
             {post.frontmatter.title}{' '}

@@ -106,6 +106,7 @@ const Navbar = () => {
               }}
               color={colorMode === 'light' ? 'white' : 'black'}
               bg={colorMode === 'light' ? 'gray.600' : 'yellow.500'}
+              aria-label={'theme switcher button'}
             >
               {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
             </Button>
