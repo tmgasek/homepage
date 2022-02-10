@@ -7,10 +7,12 @@ import {
   PostCard,
   Section,
   TechStackItem,
-  WorkItem,
+  ProjectItem,
 } from '../components';
 import { ArrowRightIcon } from '@chakra-ui/icons';
 import thumbGuitar from '../public/guitar-practice-app-preview.png';
+import thumbDevBlogs from '../public/dev-blogs.png';
+import { devBlogs, guitarApp } from '../lib/projectData';
 
 const Home = ({ featuredPosts }) => {
   return (
@@ -91,25 +93,19 @@ const Home = ({ featuredPosts }) => {
               flexDir={['column', 'row']}
             >
               <Heading as={'h2'} size={'lg'} my={2}>
-                Featured Project
+                Featured Projects
               </Heading>
-              <NextLink href={'/works'} passHref>
+              <NextLink href={'/projects'} passHref>
                 <Link>
                   <ArrowRightIcon mx={2} color={'green.500'} />
                   View all projects
                 </Link>
               </NextLink>
             </Flex>
-            <Box>
-              <WorkItem
-                id="guitar-app"
-                title="Guitar Practice App "
-                githubLink={'https://github.com/tmgasek/guitar-practice-app'}
-                liveLink={'https://guitar-practice-app.vercel.app/'}
-                blogLink={'/posts/guitar-app'}
-                thumbnail={thumbGuitar}
-              />
-            </Box>
+            <Flex flexDir={'column'} gap={5}>
+              {devBlogs()}
+              {guitarApp()}
+            </Flex>
           </Box>
         </Section>
 

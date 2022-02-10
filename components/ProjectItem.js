@@ -13,7 +13,7 @@ import {
   useColorMode,
 } from '@chakra-ui/react';
 
-const WorkItem = ({
+const ProjectItem = ({
   title,
   children,
   githubLink,
@@ -34,9 +34,9 @@ const WorkItem = ({
           <Heading as={'h2'} size={'lg'} fontWeight={'light'}>
             {title}
           </Heading>
-          <Text fontSize={'sm'} py={1}>
+          <Box fontSize={'sm'} py={1}>
             {children}
-          </Text>
+          </Box>
         </Box>
 
         <Flex gap={[1, 2]} py={2} align={'center'}>
@@ -67,4 +67,4 @@ const WorkItem = ({
   );
 };
 
-export default WorkItem;
+export default ProjectItem;

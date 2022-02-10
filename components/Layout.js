@@ -10,7 +10,7 @@ const Layout = ({ children, title }) => {
         <title>{title || 'Tomasz Gasek - Homepage'}</title>
       </Head>
 
-      <Container maxW={'container.md'} pt={14}>
+      <Container maxW={'container.md'} pt={['16', null, '24']}>
         <motion.main
           initial={{ y: 5, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}

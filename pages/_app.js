@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider theme={theme}>
       <Navbar />
-      <AnimatePresence exitBeforeEnter initial={true}>
+      <AnimatePresence exitBeforeEnter initial={false}>
         <Component {...pageProps} />
       </AnimatePresence>
     </ChakraProvider>
