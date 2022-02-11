@@ -9,6 +9,12 @@ featured: true
 
 I worked on this application during a period of a few months, as it was part of the [fullstackopen](https://fullstackopen.com/en/) course from the University of Helsinki. This was an invaluable resource from which I learned the majority of my foundational frontend and backend knowledge. The course explains and teaches you the concepts, then assigns you a series of challenges where you implement your own code solutions to problems. The culmination of those challenges is a Blog posting website, which I have in turn expanded on further in order to create dev-blogs.
 
+Dev-Blogs is an application for sharing useful programming resources among users. I think of it as a public bookmark manager, with the addition of liking and commenting.
+
+I created a REST backend with Node.js, Express.js, and MongoDB (Mongoose). I also implemented a
+secure password registration system with bcrypt.
+The frontend is a Single Page Application made with React, Redux, and Chakra UI. I focused on implementing a robust form system with React Hook Form, and an E2E testing system using the Cypress library.
+
 ## Technologies used
 
 - Node.js, Express.js, MongoDB, Mongoose, jwtoken, bcrypt
