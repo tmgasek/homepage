@@ -37,8 +37,8 @@ const Home = ({ featuredPosts }) => {
           </Text>
           <TechStackItem
             stack={[
-              "Learning Java and OOP practices as a Software Development student at Queen's University Belfast.",
-              'Currently employed part-time as an Unreal Engine 4 / C++ developer in a new game development startup studio.',
+              'Employed as a Junior Developer at a real-time collaboration software company.',
+              "Studying Software Development at Queen's University Belfast.",
               'In my free time I am studying web development, with a focus on React.',
             ]}
           />
